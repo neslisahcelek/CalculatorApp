@@ -58,9 +58,8 @@ class MainActivity : AppCompatActivity() {
             binding.btncomma.id -> {
                 btnClickValue+="," + btnClickValue
             }
-            binding.btndot.id -> {
-                btnClickValue+="." + btnClickValue
-            }
+            binding.btnplusminus.id ->
+                btnClickValue="-"+btnClickValue
         }
         binding.editTextNumber.setText(btnClickValue)
     }
@@ -93,8 +92,6 @@ class MainActivity : AppCompatActivity() {
                 resultNum = lastNumber.toDouble() / newNum.toDouble()
             "x" ->
                 resultNum = lastNumber.toDouble() * newNum.toDouble()
-            "%" ->
-                resultNum = lastNumber.toDouble() % newNum.toDouble()
             "-" ->
                 resultNum = lastNumber.toDouble() - newNum.toDouble()
             "+" ->
@@ -102,6 +99,18 @@ class MainActivity : AppCompatActivity() {
         }
         binding.editTextNumber.setText(resultNum.toString())
         newOp=true
+    }
+    fun btnACClick(view: View){
+        binding.editTextNumber.setText("0")
+        newOp=true
+    }
+    fun btnPercentClick(view: View){
+        var resultNum:Double = text.toDouble() / 100
+        binding.editTextNumber.setText(resultNum.toString())
+    }
+    fun btnDelClick(view: View){
+        var resultNum:Double = text.toDouble() / 10
+        binding.editTextNumber.setText(resultNum.toString())
     }
 
 
