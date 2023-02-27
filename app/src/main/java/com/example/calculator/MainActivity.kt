@@ -112,17 +112,6 @@ class MainActivity : AppCompatActivity() {
         var resultNum:Double = text.toDouble() / 10
         binding.editTextNumber.setText(resultNum.toString())
     }
-
-
-
-
-
-
-
-
-
-
-
 }
 
 
